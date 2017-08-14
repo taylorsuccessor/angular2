@@ -16,7 +16,8 @@ export class CreateComponent implements OnInit {
   ngOnInit() {
       this.model = {
         r1: this.rs[0].value, // default to Female
-    }
+      //   car: this.cars[0], // default to Female
+   }
 
   }
 
@@ -30,7 +31,11 @@ model = new Model();
     this.router.navigate(['/admin/model/index']);
   }
   public rs = [
-    { value: 'F', display: 'Female' },
-    { value: 'M', display: 'Male' }
+    { value: 'Female', display: 'Female' },
+    { value: 'Male', display: 'Male' }
 ];
+//  public cars = [
+ //   { value: 'volo', display: 'volo' },
+//    { value: 'cart', display: 'cart' }
+//];
 }

@@ -1,14 +1,18 @@
-<div class="row bg-title">
-        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-          <h4 class="page-title">Model</h4>
-        </div>
-        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-          <a href="https://themeforest.net/item/elite-admin-responsive-dashboard-web-app-kit-/16750820" target="_blank" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">Buy Now</a>
+
+
+ <div class="row bg-title" style="background:url(style/assets/elite/plugins/images/heading-title-bg.jpg) no-repeat center center /cover;">
+
+       <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title" ><b style="color: white;"> Dashboard</b></h4>
+                         <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+         
           <ol class="breadcrumb">
             <li><a routerLink="/">Dashboard</a></li>
             <li class="active">Model</li>
           </ol>
         </div>
+                    </div>
+        
         <!-- /.col-lg-12 --> 
       </div>
       <!-- /.row -->
@@ -70,47 +74,78 @@
           <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
               <div class="white-box">
                   <h3 class="box-title">Index Overview</h3>
+
              <div class="table-responsive">
-              <table class="table product-overview">
+             <div class="col-xs-3" >
+                            <a routerLink= "/admin/model/create" class="btn btn-primary form-control" style="background: #b4977a; border: 1px solid #b4977a;">
+                                + Create Shop 
+                            </a>
+          <!--
+           <button class="deleteRow  btn btn-danger form-control" (click)="getAllList()" >
+                              Refresh 
+                          </button>-->
+                        </div>
+               <input type="text"  [(ngModel)]="term" placeholder="search of name">
+
+              <table class="table product-overview"  >
                 <thead>
                   <tr>
-                    <th>Name</th>
+                    <th><a routerLink="/admin/model/index" (click)="sortType('name')" [class.active]="sortBy=='name'" > 
+                    Name
+                    </a></th>
                     <th>Email</th>                  
-                     <th>number</th>
-                     <th>model</th>
-                     <th>type</th>
+                        <th><a routerLink="/admin/model/index" (click)="sortType('num')" [class.active]="sortBy=='num'" > 
+                        number</a></th>
+                      <th>time</th>
+                      <th>date</th>
+                      <th>type</th>
+                     <th>Gender</th>
                      <th>status</th>
-                     <th>date</th>
-                     <th>time</th>
+                     <th>index</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr  *ngFor="let model of models">
-                     <td>{{model.name}}</td>
+                <tbody >
+                  <tr *ngFor="let model of models|filter:term ;let i=index" >
+                  <!-- |filter:term-->
+                     <td>{{model.name | uppercase}}</td>
                      <td>{{model.email}}</td>
                    <td>{{model.num}}</td>
-                    <td>{{model.r1}}</td>
+                   <td>{{model.timee}}</td>
+                   <td>{{model.dates | date: 'y/MM/dd'}}</td>
                      <td>{{model.car}}</td>
+                       <td>{{model.r1}}</td>
                       <td>{{model.area}}</td>
-                       <td>{{model.dates}}</td>
-                        <td>{{model.timee}}</td>
+                      <td>{{i+1}}</td>
                     <td>
                     <a routerLink="/admin/model/{{model.shop_id}}/edit" class="text-inverse p-r-10" data-toggle="tooltip" title="Edit Car" >
                     <i class="ti-marker-alt"></i></a>
                      
-                    <a routerLink="/admin/model/{{model.shop_id}}/show" class="text-inverse p-r-10" data-toggle="tooltip" title="View Car">
-                    <i class="ti-zoom-in"></i></a> 
+                    <a routerLink="/admin/model/{{model.shop_id}}" class="text-inverse p-r-10" data-toggle="tooltip" title="View Car">
+                    <i class="fa fa fa-eye" ></i></a> 
                     <a (click)="delete(model.shop_id)" class="text-inverse" title="Delete Car" data-toggle="tooltip">
                      <i class="ti-trash" ></i></a> 
                      </td>
-                                 
-    
-    
+  
+                 </tr>
+                  <tr *ngIf="!models || models.length==0">
+                       <td colspan="9"> no coffe disabled</td>
                   </tr>
                 </tbody>
-              </table>
+            </table>
+            <div *ngIf="models">
+         <h4>   total of row: {{ models.length }}</h4>
+            </div>
+     
+            
+<ul class="pagination">
+  
+  <li class="previous disabled"><span>Priv<i class="fa fa-icon fa-chevron-left"></i></span></li>
 
+   <li class="active"><a href="#">1</a></li>
+    <li class="next"><a href="#">next<i class="fa fa-icon fa-chevron-right"></i></a></li>
+</ul>
+   
               </div>
               </div>
 

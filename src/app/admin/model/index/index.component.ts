@@ -2,10 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Service } from '../service/service';
 import { Model } from '../service/model';
 import {ActivatedRoute, Params, Router} from '@angular/router';
+import { Pipe, PipeTransform } from '@angular/core';
+import { FilterArrayPipe } from '../filter/pipes.pipe';
+
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
-  styleUrls: ['./index.component.css']
+  styleUrls: ['./index.component.css'],
+    //pipes: [FilterArrayPipe]
 })
 export class IndexComponent implements OnInit {
 
@@ -13,7 +17,7 @@ export class IndexComponent implements OnInit {
     private _service:Service,
     private router: Router
    ) { }
-  models:any;
+  models:any[];
   ngOnInit() {
     this.getAllList();
   }
@@ -32,8 +36,27 @@ export class IndexComponent implements OnInit {
       } )
   }
 
- 
-
+sortType(sort:string){
+  if(sort=='name'){
+  this.models=this.models.sort(this.SortByName);
+  alert("sort name");
+  }
+    if(sort=='num'){
+  this.models=this.models.sort(this.SortByNum);
+  alert("sort number");
+  }
+}
+SortByName(n1:Model, n2:Model){
+  if(n1.name> n2.name)
+  return 1
+  else   if(n1.name == n2.name)
+  return 0
+  else 
+  return -1
+}
+SortByNum(n1:Model, n2:Model){
+ return (n1.num) -(n2.num)
+}
 }
 
 

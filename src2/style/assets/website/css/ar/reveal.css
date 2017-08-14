@@ -1,0 +1,251 @@
+/*	--------------------------------------------------
+	Reveal Modals
+	-------------------------------------------------- */
+
+body{
+	
+	font-family: 'Helvetica Neue' !important;
+	
+	
+}
+
+
+	.reveal-modal-bg { 
+		position: fixed; 
+		height: 100%;
+		width: 100%;
+		background: #000;
+		background: rgba(255,255,255,.4);
+		z-index: 100;
+		display: none;
+		top: 0;
+		right: 0;
+		z-index:9999;
+		overflow:hidden;
+		}
+	
+	.reveal-modal {
+		visibility: hidden;
+		top:7% !important;
+		right: 50%;
+		margin-right: -375px;
+		width: 750px;
+		background: #FFF no-repeat -200px -80px;
+		position:fixed;
+		z-index:10000;
+		padding:25px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+		-moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
+		-webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
+		-box-shadow: 0 0 10px rgba(0,0,0,.4);
+		height:550px;
+		
+
+		}
+		
+	.reveal-modal.small 		{ width: 200px; margin-right: -140px;}
+	.reveal-modal.medium 		{ width: 400px; margin-right: -240px;}
+	.reveal-modal.large 		{ width: 600px; margin-right: -340px;}
+	.reveal-modal.xlarge 		{ width: 800px; margin-right: -440px;}
+	
+	.reveal-modal .close-reveal-modal {
+		position: absolute;
+		top: 5px;
+		left: 5px;
+		color: #aaa;
+		text-shadow: 0 -1px 1px rbga(0,0,0,.6);
+		font-weight: bold;
+		cursor: pointer;
+		width:21px; height:21px; background-image:url(../images/icon_close.svg); background-position:right top; background-repeat:no-repeat;
+		}
+		
+		
+	/*
+		
+	NOTES
+	
+	Close button entity is &#215;
+	
+	Example markup
+	
+	<div id="myModal" class="reveal-modal">
+		<h2>Awesome. I have it.</h2>
+		<p class="lead">Your couch.  I it's mine.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultrices aliquet placerat. Duis pulvinar orci et nisi euismod vitae tempus lorem consectetur. Duis at magna quis turpis mattis venenatis eget id diam. </p>
+		<a class="close-reveal-modal">&#215;</a>
+	</div>
+	
+	*/
+	
+	/*login popup css*/
+	
+	
+	.reveal-modal2-bg { 
+		position: fixed; 
+		height: 100%;
+		width: 100%;
+		z-index: 100;
+		display: none;
+		top: 0;
+		right: 0;
+		z-index:9999;
+		overflow:hidden;
+		
+		}
+	
+	.reveal-modal2 {
+		visibility: hidden;
+		top:24% !important;
+		right: 50%;
+		margin-right: -425px;
+		width: 850px;
+		background: #FFF no-repeat -200px -80px;
+		position:fixed;
+		z-index:10000;
+		padding:30px;
+		-moz-border-radius: 0px;
+		-webkit-border-radius: 0px;
+		border-radius: 0px;
+		box-shadow: 0 0 10px #333; 
+
+		
+
+		}
+		
+	.reveal-modal2.small 		{ width: 200px; margin-right: -140px;}
+	.reveal-modal2.medium 		{ width: 400px; margin-right: -240px;}
+	.reveal-modal2.large 		{ width: 600px; margin-right: -340px;}
+	.reveal-modal2.xlarge 		{ width: 800px; margin-right: -440px;}
+	
+	.reveal-modal2 .close-reveal-modal {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		color: #aaa;
+		text-shadow: 0 -1px 1px rbga(0,0,0,.6);
+		font-weight: bold;
+		cursor: pointer;
+		background-image:url(../images/icon_close.svg) ;
+		background-position: right top;
+		background-repeat: no-repeat;
+		width:27px; height:27px;
+		}
+	
+	
+	/*login popup css*/
+	
+	
+	
+	.reveal-modal3-bg { 
+		position: fixed; 
+		height: 100%;
+		width: 100%;
+		z-index: 100;
+		display: none;
+		top: 0;
+		right: 0;
+		z-index:9999;
+		overflow:hidden;
+		
+		}
+	
+	.reveal-modal3 {
+		visibility: hidden;
+		top: 5%;
+		right: 50%;
+		margin-right: -425px;
+		width: 850px;
+		background: #FFF no-repeat -200px -80px;
+		position:absolute;
+		z-index:10000;
+		padding:30px;
+		-moz-border-radius: 0px;
+		-webkit-border-radius: 0px;
+		border-radius: 0px;
+		box-shadow: 0 0 10px #333; 
+
+		
+
+		}
+		
+	.reveal-modal3.small 		{ width: 200px; margin-right: -140px;}
+	.reveal-modal3.medium 		{ width: 400px; margin-right: -240px;}
+	.reveal-modal3.large 		{ width: 600px; margin-right: -340px;}
+	.reveal-modal3.xlarge 		{ width: 800px; margin-right: -440px;}
+	
+	.reveal-modal3 .close-reveal-modal {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		color: #aaa;
+		text-shadow: 0 -1px 1px rbga(0,0,0,.6);
+		font-weight: bold;
+		cursor: pointer;
+		background-image:url(../images/icon_close.svg) ;
+		background-position: right top;
+		background-repeat: no-repeat;
+		width:27px; height:27px;
+		}
+		
+		
+	/*
+		
+	NOTES
+	
+	Close button entity is &#215;
+	
+	Example markup
+	
+	<div id="myModal" class="reveal-modal">
+		<h2>Awesome. I have it.</h2>
+		<p class="lead">Your couch.  I it's mine.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultrices aliquet placerat. Duis pulvinar orci et nisi euismod vitae tempus lorem consectetur. Duis at magna quis turpis mattis venenatis eget id diam. </p>
+		<a class="close-reveal-modal">&#215;</a>
+	</div>
+	
+	*/
+	
+	/*login popup css*/
+	
+	
+	
+
+#myModal_add.reveal-modal2{ top: 20% !important; position: fixed !important;}
+
+
+@media only screen and (max-width:992px){
+	.reveal-modal2	{ top:25% !important; position: absolute; width: 80%; right: 10%; margin-right: 0px;}
+	.reveal-modal3	{  width: 80%; right: 10%; margin-right: 0px;}
+}
+
+	
+@media only screen and (max-width:768px){
+	.reveal-modal2	{ top:25% !important;}
+	
+}
+@media only screen and (max-width:767px){
+	.reveal-modal2	{ top:27% !important; position: absolute; width: 80%; right: 10%; margin-right: 0px;}
+	#myModal_add.reveal-modal2{ top: 20% !important; position: absolute !important;}
+	
+}
+
+@media only screen and (max-width:414px){
+	
+	.reveal-modal2	{ top:20% !important; position: fixed; width: 90%; right: 5%; margin-right: 0px; padding: 20px; }
+	#myModal_add.reveal-modal2{ top: 6% !important; position: fixed !important;}
+	.reveal-modal3	{  width: 90%; right: 5%; margin-right: 0px; padding: 20px; }
+	
+	.actions_area ul li { float:right; margin-right:8px; }
+}
+
+@media only screen and (max-width:375px){
+	#myModal_add.reveal-modal2{ top: 4% !important; }
+}
+
+
+
+
+	
+

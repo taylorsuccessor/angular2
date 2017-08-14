@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'GE_SS_Two_Light';
+    src: url('fonts/GE_SS_Two_Light.eot');
+    src: url('fonts/GE_SS_Two_Light.eot') format('embedded-opentype'),
+         url('fonts/GE_SS_Two_Light.woff2') format('woff2'),
+         url('fonts/GE_SS_Two_Light.woff') format('woff'),
+         url('fonts/GE_SS_Two_Light.ttf') format('truetype'),
+         url('fonts/GE_SS_Two_Light.svg#GE_SS_Two_Light') format('svg');
+}
