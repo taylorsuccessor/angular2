@@ -18,6 +18,9 @@ export class EditComponent implements OnInit {
 
   ngOnInit() {
       this.getSingleModel();
+      this.model = {
+        r1: this.rs[0].value, // default to Female
+   }
 
   }
 
@@ -40,7 +43,10 @@ export class EditComponent implements OnInit {
   }
  
    goBack(){
-    this.router.navigate(['/admin/model/index']);
+    this.router.navigate(['/admin/model']);
   }
-
+  public rs = [
+    { value: 'F', display: 'Female' },
+    { value: 'M', display: 'Male' }
+];
 }

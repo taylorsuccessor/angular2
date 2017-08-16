@@ -1,5 +1,6 @@
 
 
+
  <div class="row bg-title" style="background:url(style/assets/elite/plugins/images/heading-title-bg.jpg) no-repeat center center /cover;">
 
        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
@@ -16,24 +17,24 @@
         <!-- /.col-lg-12 --> 
       </div>
       <!-- /.row -->
-      <div class="row">
+      <div class="row" >
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <div class="white-box">
             <h3 class="box-title"><i class="ti-shopping-cart text-success"></i> Order Received</h3>
             <div class="text-right"> <span class="text-muted">Todays Order</span>
-              <h1><sup><i class="ti-arrow-up text-success"></i></sup> 12,000</h1>
+              <h1><sup><i class="ti-arrow-up text-success"></i></sup>{{sum()}}</h1>
             </div>
-            <span class="text-success">20%</span>
+            <span class="text-success">{{sum()-2}}%</span>
             <div class="progress m-b-0">
               <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:20%;"> <span class="sr-only">20% Complete</span> </div>
             </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-          <div class="white-box">
+          <div class="white-box" >
             <h3 class="box-title"><i class="ti-cut text-danger"></i> Tax Deducation</h3>
             <div class="text-right"> <span class="text-muted">Monthly Deduction</span>
-              <h1><sup><i class="ti-arrow-down text-danger"></i></sup> $5,000</h1>
+              <h1><sup><i class="ti-arrow-down text-danger"></i></sup>44</h1>
             </div>
             <span class="text-danger">30%</span>
             <div class="progress m-b-0">
@@ -74,7 +75,6 @@
           <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
               <div class="white-box">
                   <h3 class="box-title">Index Overview</h3>
-
              <div class="table-responsive">
              <div class="col-xs-3" >
                             <a routerLink= "/admin/model/create" class="btn btn-primary form-control" style="background: #b4977a; border: 1px solid #b4977a;">
@@ -85,29 +85,27 @@
                               Refresh 
                           </button>-->
                         </div>
-               <input type="text"  [(ngModel)]="term" placeholder="search of name">
-
+                    
               <table class="table product-overview"  >
                 <thead>
                   <tr>
-                    <th><a routerLink="/admin/model/index" (click)="sortType('name')" [class.active]="sortBy=='name'" > 
-                    Name
-                    </a></th>
+                    <th><a routerLink="/admin/model" (click)="sortType('name')" [class.active]="sortBy=='name'"> 
+                    Name</a></th>
                     <th>Email</th>                  
-                        <th><a routerLink="/admin/model/index" (click)="sortType('num')" [class.active]="sortBy=='num'" > 
+            <th><a routerLink="/admin/model" (click)="sortType('num')" [class.active]="sortBy=='num'"> 
                         number</a></th>
                       <th>time</th>
                       <th>date</th>
                       <th>type</th>
                      <th>Gender</th>
-                     <th>status</th>
+                     <th><a routerLink="/admin/model" (click)="sortType('status')" [class.active]="sortBy=='status'"> 
+                     status</a></th>
                      <th>index</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody >
-                  <tr *ngFor="let model of models|filter:term ;let i=index" >
-                  <!-- |filter:term-->
+         <tr *ngFor="let model of models| filter: nameSearch:emailSearch:statusSearch:numSearch:typeSearch:genderSearch:dateSearch:idSearch, let i=index ">
                      <td>{{model.name | uppercase}}</td>
                      <td>{{model.email}}</td>
                    <td>{{model.num}}</td>
@@ -133,33 +131,210 @@
                   </tr>
                 </tbody>
             </table>
-            <div *ngIf="models">
+                <div *ngIf="models">
          <h4>   total of row: {{ models.length }}</h4>
             </div>
-     
-            
-<ul class="pagination">
-  
-  <li class="previous disabled"><span>Priv<i class="fa fa-icon fa-chevron-left"></i></span></li>
 
+<ul class="pagination"> 
+  <li class="previous disabled"><span>Priv<i class="fa fa-icon fa-chevron-left"></i></span></li>
    <li class="active"><a href="#">1</a></li>
     <li class="next"><a href="#">next<i class="fa fa-icon fa-chevron-right"></i></a></li>
 </ul>
-   
               </div>
               </div>
 
           </div>  
       </div>
+  <div class="right-sidebar" style="overflow: hidden; width: auto; height: 100%;">
+                    <div class="slimscrollright">
+                        <div class="rpanel-title"> Search Panel <span><i class="ti-close right-side-toggle"></i></span> </div>
 
+                        <div class="r-panel-body">
+                          <h3 class="title-heading">Search</h3>
+                            <ul class="form-horizontal">
+                            <li>
+                            <div class="form-group">
+                    <div class="col-md-12">
+                        <input placeholder="Id" class="form-control input-sm "  type="text" [(ngModel)]="idSearch">
+
+                    </div>
+                </div>
+                </li>
+                      <li>
+                            <div class="form-group">
+                    <div class="col-md-12">
+                        <input placeholder="Name" class="form-control input-sm "  type="text" [(ngModel)]="nameSearch">
+
+                    </div>
+                </div>
+                </li>   
+                           <li>
+                            <div class="form-group">
+                    <div class="col-md-12">
+                        <input placeholder="Email" class="form-control input-sm "  type="email" [(ngModel)]="emailSearch">
+
+                    </div>
+                </div>
+                </li>    
+                           <li>
+                            <div class="form-group">
+                    <div class="col-md-12">
+                        <input placeholder="Number" class="form-control input-sm "  type="text" [(ngModel)]="numSearch">
+
+                    </div>
+                </div>
+                </li>   
+                           <li>
+                            <div class="form-group">
+                    <div class="col-md-12">
+                        <input placeholder="Date" class="form-control input-sm "  type="date" [(ngModel)]="dateSearch">
+
+                    </div>
+                </div>
+                </li>       
+                           <li>
+                            <div class="form-group">
+                    <div class="col-md-12">
+                        <input placeholder="Type" class="form-control input-sm "  type="text" [(ngModel)]="typeSearch">
+
+                    </div>
+                </div>
+                </li>
+                           <li>
+                            <div class="form-group">
+                    <div class="col-md-12">
+                        <input placeholder="Gender" class="form-control input-sm "  type="text" [(ngModel)]="genderSearch">
+
+                    </div>
+                </div>
+                </li>
+                           <li>
+                            <div class="form-group">
+                    <div class="col-md-12">
+                        <input placeholder="Status" class="form-control input-sm "  type="text" [(ngModel)]="statusSearch">
+
+                    </div>
+                </div>
+                </li>
+       
+                             </ul>
+                           
+                           
+                        </div>
+                    </div>
+                </div>
 <!--
      <i class="fa fa-spinner fa-spin" style="font-size:24px"></i>
             <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
 -->
+<!--
+<div class="scrollable-right container" style="overflow: hidden; width: auto; height: 100%;">
+                              <h3 class="title-heading">Search</h3>
+
+                <form method="GET" action="http://localhost:8000/admin/menu_section" accept-charset="UTF-8" id="searchForm" class="form-horizontal">
 
 
 
 
+                
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <input placeholder="Id" class="form-control input-sm " name="id" type="text" value="">
+
+                    </div>
+                </div>
+
+                
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <input placeholder="Name En" class="form-control input-sm " name="name_en" type="text" value="">
+
+                    </div>
+                </div>
+
+                
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <input placeholder="Name Ar" class="form-control input-sm " name="name_ar" type="text" value="">
+
+                    </div>
+                </div>
+
+                
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <input placeholder="Shop Id" class="form-control input-sm " name="shop_id" type="text" value="">
+
+                    </div>
+                </div>
+
+                
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <input placeholder="Status" class="form-control input-sm " name="status" type="text" value="">
+
+                    </div>
+                </div>
+
+                
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <input placeholder="Description En" class="form-control input-sm " name="description_en" type="text" value="">
+
+                    </div>
+                </div>
+
+                
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <input placeholder="Description Ar" class="form-control input-sm " name="description_ar" type="text" value="">
+
+                    </div>
+                </div>
+
+                
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <input placeholder="Created At" class="form-control input-sm " name="created_at" type="text" value="">
+
+                    </div>
+                </div>
+
+                
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <input placeholder="Updated At" class="form-control input-sm " name="updated_at" type="text" value="">
+
+                    </div>
+                </div>
+
+                
+
+
+
+
+                <div class="form-group">
+                    <label class="col-md-12"></label>
+                    <div class="col-md-12">
+                        <input class="btn btn-info btn-sm" name="search" type="submit" value="Search">
+                    </div>
+                </div>
+
+                <input name="sort" type="hidden" value="">
+                <input name="order" type="hidden" value="">
+                </form>
+            </div>
+
+-->
 
 
 

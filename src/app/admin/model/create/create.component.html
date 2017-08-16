@@ -25,10 +25,10 @@
                <p class="form-control-static"   > 
                <input  #nameInput="ngModel" type="text" class="form-control" id="inputName1"  [(ngModel)]="model.name" name="name"   maxlength="7" minlength="3" placeholder="enter name" required >
                </p>
-                     </div>
+                     
                      <div class="alert alert-danger" *ngIf="nameInput.errors && (nameInput.dirty || nameInput.touched)">
                 <span [hidden]="nameInput.errors.maxlength">Please enter a valid name maximum 7 & min 3 </span>     
-            </div>
+            </div></div>
                      </div>
                      </div>
 
@@ -61,10 +61,10 @@
                <p class="form-control-static"   > 
                <input type="number" class="form-control"  [(ngModel)]="model.num" name="num" max="7" min="2" required #numInput="ngModel">
                </p>
-                     </div>
-                       <div class="alert alert-danger" *ngIf="numInput.errors && (numInput.dirty || numInput.touched)">
+                                            <div class="alert alert-danger" *ngIf="numInput.errors && (numInput.dirty || numInput.touched)">
                 <span [hidden]="numInput.errors.max">Please enter a valid number maximum 7  min 3 </span>
-            </div> 
+            </div> </div>
+
                      </div>
                      </div>
               
@@ -96,10 +96,10 @@
                        <label class="control-label col-md-3" for="model_select">Type:</label> 
                      <div class="col-md-9">     
                             <select name="car" [(ngModel)]="model.car" required>
-                               <option value="Volvo" >Volvo</option>
-                               <option value="Saab" >Saab</option>
-                               <option value="Fiat" >Fiat</option>
-                               <option value="Audi" >Audi</option>
+                               <option value="s1" >Volvo</option>
+                               <option value="s2" >Saab</option>
+                               <option value="s3" >Fiat</option>
+                               <option value="s4" >Audi</option>
                            </select>     
                          </div>
                          </div> 

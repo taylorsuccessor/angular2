@@ -17,14 +17,17 @@
                 <h3 class="box-title">Edit</h3>
                  <hr class="m-t-0 m-b-40">
                      <div class="row">
-                     <div class="col-md-6">
+                        <div class="col-md-6">
                      <div class="form-group">
                <label class="control-label col-md-3">Name:</label>
                      <div class="col-md-9">
                <p class="form-control-static"   > 
-            <input type="text" class="form-control" id="inputName1"  [(ngModel)]="model.name" name="name">
+               <input  #nameInput="ngModel" type="text" class="form-control" id="inputName1"  [(ngModel)]="model.name" name="name"   maxlength="7" minlength="3" placeholder="enter name" required >
                </p>
-                     </div>
+                     
+                     <div class="alert alert-danger" *ngIf="nameInput.errors && (nameInput.dirty || nameInput.touched)">
+                <span [hidden]="nameInput.errors.maxlength">Please enter a valid name maximum 7 & min 3 </span>     
+            </div></div>
                      </div>
                      </div>
                     
@@ -48,14 +51,17 @@
              
 
                    
-                     <div class="col-md-6">
+                    <div class="col-md-6">
                      <div class="form-group">
                <label class="control-label col-md-3">Number:</label>
                      <div class="col-md-9">
                <p class="form-control-static"   > 
-               <input type="number" class="form-control"  [(ngModel)]="model.num" name="num">
+               <input type="number" class="form-control"  [(ngModel)]="model.num" name="num" max="7" min="2" required #numInput="ngModel">
                </p>
-                     </div>
+                                            <div class="alert alert-danger" *ngIf="numInput.errors && (numInput.dirty || numInput.touched)">
+                <span [hidden]="numInput.errors.max">Please enter a valid number maximum 7  min 3 </span>
+            </div> </div>
+
                      </div>
                      </div>
                 
@@ -98,14 +104,16 @@
                      </div>
                      </div>
 
-                     <div class="col-md-6">
+               <div class="col-md-6">
                      <div class="form-group">
                <label class="control-label col-md-3">Gender :</label>
                      <div class="col-md-9">
-               <p class="form-control-static"   > 
-              <input type="radio" name="r1" value="electronic" checked [(ngModel)]="model.r1"> electronic<br>
-              <input type="radio" name="r1" value="traditional" [(ngModel)]="model.r1">traditional       
-               </p>
+              
+              <div *ngFor="let r1 of rs">
+        <input type="radio" name="r1" [(ngModel)]="model.r1" [value]="r1.value">
+        {{r1.display}}     
+    </div>    
+              
                      </div>
                      </div>
                      </div>

@@ -9,15 +9,8 @@ import { AppComponent } from './Apps/app.component';
 import { PublicComponent } from './common/public';
 
 //array
-  import { Array } from 'app/admin/shop/array'; 
-var a:Array=new Array()
-var shop= a.getarr();
-var ShopService=a.getArrService();
 
-  import { ArrayC } from 'app/admin/car/array'; 
-var ac:ArrayC=new ArrayC()
-var car= ac.getArrCar();
-var CarService=ac.getArrCService();
+
 
  import { ArrayModel } from 'app/admin/model/component'; 
 var am:ArrayModel =new ArrayModel()
@@ -43,8 +36,6 @@ import { AuthGuard } from './../common/auth.guard';
     RecoverComponent,
     PublicComponent,
 
-  shop,
-  car,
   model,
   ],
   imports: [
@@ -53,7 +44,7 @@ import { AuthGuard } from './../common/auth.guard';
     HttpModule,
     AppRoutingModule,
   ],
-  providers: [AuthGuard,UserService,ShopService,CarService,ModelService],
+  providers: [AuthGuard,UserService,ModelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

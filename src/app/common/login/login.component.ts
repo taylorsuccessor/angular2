@@ -33,7 +33,7 @@ newTrustFormVisible: false;
 
    .subscribe(
                 (data) => {
-                    this.router.navigate(['/admin/model/index']);
+                    this.router.navigate(['/admin/model']);
                 },
            //     error => {
                  //   this.userService.error();

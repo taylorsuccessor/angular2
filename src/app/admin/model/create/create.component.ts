@@ -25,14 +25,14 @@ model = new Model();
   create(){
       this._service
         .create(this.model)
-        .subscribe(()=>  this.router.navigate(['/admin/model/index']));
+        .subscribe(()=>  this.router.navigate(['/admin/model']));
   }
    goBack(){
-    this.router.navigate(['/admin/model/index']);
+    this.router.navigate(['/admin/model']);
   }
   public rs = [
-    { value: 'Female', display: 'Female' },
-    { value: 'Male', display: 'Male' }
+    { value: 'F', display: 'Female' },
+    { value: 'M', display: 'Male' }
 ];
 //  public cars = [
  //   { value: 'volo', display: 'volo' },
