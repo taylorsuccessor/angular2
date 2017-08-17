@@ -3,6 +3,9 @@
     "version": "1.0.0-beta.24",
     "name": "master-pages-in-angular2"
   },
+    "scripts": [
+    "../node_modules/underscore/underscore.js"
+  ],
   "apps": [
     {
       "root": "src",
@@ -55,5 +58,7 @@
       "pipe": true,
       "service": true
     }
+    
   }
+
 }

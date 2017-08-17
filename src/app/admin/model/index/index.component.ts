@@ -4,6 +4,9 @@ import { Model } from '../service/model';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import { Pipe, PipeTransform } from '@angular/core';
 import { FilterArrayPipe } from '../index/pipes.pipe';
+import * as _ from 'underscore';
+
+import { PagerService } from '../index/pager.service';
 
 @Component({
   selector: 'app-index',
@@ -16,11 +19,27 @@ export class IndexComponent implements OnInit {
   constructor(
     private _service:Service,
     private router: Router,
+     private pagerService: PagerService,
    ) { }
   models:any;
+ private allItems: any[];
+
+    // pager object
+    pager: any = {};
+
 
   ngOnInit() {
     this.getAllList();
+    
+         this._service
+        .getAllList()
+            .subscribe(data => {
+                // set items to json response
+                this.allItems = data;
+
+                // initialize to page 1
+                this.setPage(1);
+            });
   }
   getAllList(){
      this._service
@@ -71,10 +90,33 @@ SortByNum(n1:Model, n2:Model){
   return -1
 }
 
-sum(){
-  let i=8+8;
-  return i;
-}
 
+      setPage(page: number) {
+        if (page < 1 || page > this.pager.totalPages) {
+            return;
+        }
+
+        // get pager object from service
+        this.pager = this.pagerService.getPager(this.allItems.length, page);
+
+        // get current page of items
+        this.models = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
+    }
+  
+  fun(){
+  let i=6+4;
+    return i;
+  }
+  public sum(){
+  this._service
+        .getAllList()
+        .subscribe(models => {
+      return     models+1;
+         
+      } )
+   
+  }
+
+}
 
  

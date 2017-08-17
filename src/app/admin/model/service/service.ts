@@ -40,6 +40,6 @@ export class Service {
  getByFilter(info){
     return this._http.post("http://localhost/api_json/search.php",info)
       .map(()=>"");
+  
   }
-
 }

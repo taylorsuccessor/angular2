@@ -6,7 +6,7 @@ import { IndexComponent } from '../model/index';
 import { SecureComponent } from 'app/admin/secure';
 import { Service } from '../model/service/service';
 import { FilterArrayPipe } from '../model/index/pipes.pipe';
-
+import { PagerService } from '../model/index/pager.service';
 export class ArrayModel{
 	
 	getArrModel(){
@@ -14,7 +14,7 @@ export class ArrayModel{
 	}
 
 	getArrMService(){
-	return [Service]
+	return [Service,PagerService]
 	}
 }
 

@@ -18,11 +18,11 @@
       </div>
       <!-- /.row -->
       <div class="row" >
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" >
           <div class="white-box">
             <h3 class="box-title"><i class="ti-shopping-cart text-success"></i> Order Received</h3>
             <div class="text-right"> <span class="text-muted">Todays Order</span>
-              <h1><sup><i class="ti-arrow-up text-success"></i></sup>{{sum()}}</h1>
+              <h1><sup><i class="ti-arrow-up text-success"></i></sup> {{sum()}}</h1>
             </div>
             <span class="text-success">{{sum()-2}}%</span>
             <div class="progress m-b-0">
@@ -30,11 +30,12 @@
             </div>
           </div>
         </div>
+   
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <div class="white-box" >
             <h3 class="box-title"><i class="ti-cut text-danger"></i> Tax Deducation</h3>
             <div class="text-right"> <span class="text-muted">Monthly Deduction</span>
-              <h1><sup><i class="ti-arrow-down text-danger"></i></sup>44</h1>
+              <h1><sup><i class="ti-arrow-down text-danger"></i></sup>{{fun()}}</h1>
             </div>
             <span class="text-danger">30%</span>
             <div class="progress m-b-0">
@@ -135,11 +136,25 @@
          <h4>   total of row: {{ models.length }}</h4>
             </div>
 
-<ul class="pagination"> 
-  <li class="previous disabled"><span>Priv<i class="fa fa-icon fa-chevron-left"></i></span></li>
-   <li class="active"><a href="#">1</a></li>
-    <li class="next"><a href="#">next<i class="fa fa-icon fa-chevron-right"></i></a></li>
-</ul>
+
+  <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                <li [ngClass]="{disabled:pager.currentPage === 1}">
+                    <a (click)="setPage(1)">First</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === 1}">
+                    <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+                </li>
+                <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                    <a (click)="setPage(page)">{{page}}</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                    <a (click)="setPage(pager.currentPage + 1)">Next</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                    <a (click)="setPage(pager.totalPages)">Last</a>
+                </li>
+            </ul>
+
               </div>
               </div>
 
