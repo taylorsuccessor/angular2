@@ -15,10 +15,10 @@ export class EditComponent implements OnInit {
     private route: ActivatedRoute,
     private _service: Service
   ) { }
-
+  models:any;
   ngOnInit() {
       this.getSingleModel();
-      this.model = {
+      this.models = {
         r1: this.rs[0].value, // default to Female
    }
 

@@ -12,9 +12,9 @@ export class CreateComponent implements OnInit {
   constructor(
     private _service: Service,
      private router: Router) { }
-
+  models:any;
   ngOnInit() {
-      this.model = {
+      this.models = {
         r1: this.rs[0].value, // default to Female
       //   car: this.cars[0], // default to Female
    }
