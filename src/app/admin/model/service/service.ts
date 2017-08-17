@@ -13,7 +13,7 @@ export class Service {
         this.checkMe = res;
        
         if(this.checkMe._body !== "0"){
-           return res.json()
+           return res.json();
         }
        
       });

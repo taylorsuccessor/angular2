@@ -34,8 +34,10 @@ export class IndexComponent implements OnInit {
          this._service
         .getAllList()
             .subscribe(data => {
+        console.log(data.rows.length);
+              alert(data.totalNumber);
                 // set items to json response
-                this.allItems = data;
+                this.allItems = data.rows;
 
                 // initialize to page 1
                 this.setPage(1);
@@ -45,7 +47,7 @@ export class IndexComponent implements OnInit {
      this._service
         .getAllList()
         .subscribe(models => {
-          this.models = models;
+          this.models = models.rows;
       } )
   }
   delete(id){
