@@ -1,0 +1,186 @@
+@media only screen and (min-width: 360px) and (max-width: 480px) {
+    .right-top ul {
+        display: none;
+    }
+    .right-top {
+        width: 100%;
+        width: 30px;
+        padding-top: 0px;
+        margin: 0px auto;
+        display: table;
+        position: absolute;
+        left: 20px;
+        top: 0px;
+        overflow: visible;
+    }
+    article {
+        padding: 0px !important;
+    }
+    header {
+        max-height: 0px !important;
+        padding: 0px;
+    }
+    .row {
+        margin: 0px;
+        padding: 0px;
+    }
+    .logo {
+        display: none;
+    }
+    .bottom-bar {
+        display: none;
+    }
+    .sub-contat ul.cont_dt li:first-child {
+        width: 100%;
+        margin-bottom: 0;
+        font-size: 18px;
+    }
+    .search-blog {
+        padding: 10px 0px !important
+    }
+    .CustomFLoating1 {
+        float: right;
+        width: 50%;
+        margin-left: 0px;
+    }
+    .search-blog .blog_btn:last-child {
+        float: none;
+        clear: both;
+        padding: 5px;
+        margin: 0px;
+        display: block;
+        width: 100%;
+        font-size: 16px;
+    }
+    .OtherButton {
+        float: none;
+        clear: both;
+        margin-right: 0;
+        width: 100%;
+        padding: 10px;
+        margin: 0 auto;
+        display: block;
+    }
+    .top_banner {
+        position: relative;
+        top: 50px;
+    }
+    .search-bar {
+        position: relative;
+        top: 50px;
+    }
+    .search-result {
+        position: relative;
+        top: 50px;
+    }
+    .EmadFloating1 {
+        width: 100%;
+        display: inline-block;
+        float: right;
+        border-left: 2px solid #b59778;
+        margin-right: 0px;
+    }
+    .news-srh .new .selectyzeValue {
+        display: block;
+    }
+    .EmadFloating11 {
+        width: 100%;
+        float: none;
+        display: block;
+        clear: both;
+    }
+    .EmadFloating2 {
+        width: 100%;
+        display: inline-block;
+        float: none;
+        clear: both;
+    }
+    .orders img {
+        width: 100% !important;
+        height: auto !important;
+        margin-top: 15px;
+        display: block;
+    }
+    .orders a img {
+        width: 100%;
+    }
+    .caption-sec {
+        margin-bottom: 0px;
+    }
+    .giftcard-container {
+        margin-top: 10px;
+    }
+    ul.cont_dt li a {
+        font-size: 18px;
+    }
+    .bx-wrapper {
+        margin-top: 10px;
+    }
+    .img_section {
+        margin-top: 50px;
+    }
+    .popAndrate h2 {
+        margin: 0;
+        font-weight: bold;
+        font-size: 18px;
+        color: #000;
+        float: none;
+        padding-top: 5px;
+        clear: both;
+        padding: 10px;
+    }
+    .media-box {
+        margin-top: 10px;
+    }
+    .text_box uplod {
+        text-align: center;
+        padding-top: 10px;
+    }
+    .logwrapp {
+        margin-top: 10px;
+    }
+    .frgt a {
+        display: block;
+        width: 100%;
+        padding-top: 10px;
+    }
+    .address_view form input[type="radio"] {
+        max-width: 10px;
+        float: right;
+        display: inline-block;
+        margin-bottom: 30px;
+    }
+    .address-radio {
+        width: 100%;
+    }
+    .address-radio label {
+        width: 120px;
+    }
+    .text_box6 {
+        position: relative;
+        top: 40px;
+        right: 20px;
+    }
+    .img_cap h2 {
+        width: 10%;
+        text-align: center;
+        padding-top: 10px;
+    }
+    .img_cap img {
+        width: 130px;
+        height: 95px;
+    }
+    .gray_drop2 h2 {
+        font-size: 15px;
+    }
+    .uplod {
+        text-align: center !important;
+        padding-top: 10px !important;
+        display: block;
+    }
+    .totalCart button {
+        color: white;
+        background: #848281;
+        width: 100%;
+    }
+}

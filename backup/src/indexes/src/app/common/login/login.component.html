@@ -1,0 +1,73 @@
+
+
+
+
+ <section id="wrprojecter" class="login-register" style="background-image:url(style/assets/website/images/banner3.jpg) !important;width:100%;" >
+<div class="login-box">
+        <div class="white-box">
+      <img src="style/assets/fxwebkit/img/logo.png" alt="vgf" width=100%>
+        <div class="form-horizontal form-material">
+        <div class="dropdown" style="float:right;">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:#b4977A"><i class="fa fa-language"></i> Language</a>
+                <ul class="dropdown-menu">
+              <li> <a href="#"><b>     Arabic</b></a></li>
+                <li><a href="#"> <b> English</b></a></li>
+                </ul>
+            </div>
+        <h3 class="box-title m-b-20">sign In </h3>
+        </div>
+
+       <form class="form-horizontal form-material" id="loginform" (submit)="loginUser()">
+        <div class="form-group ">
+              <div class="from-group">
+          
+            <input #emailInput="ngModel"
+          
+             [(ngModel)]="model.email" type="email" name="email" class="form-control" placeholder="Email" required="" ngModel/>
+
+             <div class="alert alert-danger" *ngIf="emailInput.errors && (emailInput.dirty || emailInput.touched)">
+                <span [hidden]="!emailInput.errors.pattern">
+                    please enter a valid email
+                </span>
+            </div>
+             
+        </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-12">
+          <input class="form-control" type="password" required="" placeholder="Password" [(ngModel)]="model.password" name="password" ngModel>
+          </div>
+        </div>
+     
+        <div class="form-group text-center m-t-20">
+          <div class="col-xs-12">
+        
+           <div  [hidden]="!newTrustFormVisible">   <i class="fa fa-spinner fa-spin" style="font-size:24px"></i></div>
+          </div>
+        </div>
+<!-- (click)="newTrustFormVisible = !newTrustFormVisible;"-->
+<a href="#" >  <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit" style="background: #b4977a; border: 1px solid #b4977a">Sign In</button></a>
+<!--
+<div ng-show="newTrustFormVisible" class="panel panel-default">
+  ...
+</div>
+
+-->
+      <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
+                    <div class="social">
+                        <a (click)="forgetPas()"  style="color:#b4977A">Forget Password</a>
+                    </div>
+                </div>
+            </div>
+
+              <div class="form-group m-b-0">
+          <div class="col-sm-12 text-center">
+                  <p>Don't have an account? <a  class="text-primary m-l-5" (click)="goBack()"><b>Sign Up</b></a></p>
+          </div>
+        </div>
+      </form>
+     
+    </div>
+  </div>
+</section>

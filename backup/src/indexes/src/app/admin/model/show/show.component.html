@@ -1,0 +1,170 @@
+ <div class="row bg-title" style="background:url(style/assets/elite/plugins/images/heading-title-bg.jpg) no-repeat center center /cover;  ">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                            <h4 class="page-title" ><b style="color: white;"> Dietal</b></h4>
+                           <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
+                        <ol class="breadcrumb">
+                            <li><a routerLink="/admin/model/index">model</a></li>
+                            <li class="active">Dietal</li>
+                        </ol>
+                    </div></div>
+                    <!-- /.col-lg-12 -->
+                </div>
+ <!--iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii-->
+                              
+                     <div class="white-box">            
+   <div class="row bg-title">
+                                <div  *ngIf=model>
+                           <div class="panel-body">
+      <form class="form-horizontal" role="form" (submit)="edit()">
+                                        <div class="form-body">
+                            <hr class="m-t-0 m-b-40">
+     <div class="row">
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                               <label class="control-label col-md-3">ID:</label>
+                                   <div class="col-md-9">
+                              <p class="form-control-static"> {{model.shop_id}} </p>
+                                  </div>
+                                  </div>
+                                  </div>
+                            
+                                      
+                                        
+                                         
+                                     
+                                       <div class="col-md-6">
+                                       <div class="form-group">
+                                <label class="control-label col-md-3">Email:</label>
+                                        <div class="col-md-9">
+                                <p class="form-control-static"> {{model.email}} </p>
+                                       </div>
+                                       </div>
+                                      </div>
+                                  
+                                             <div class="col-md-6">
+                                             <div class="form-group">
+                                    <label class="control-label col-md-3">Name:</label>
+                                            <div class="col-md-9">
+                                    <p class="form-control-static" >   {{model.name}}</p>
+                                            </div>
+                                            </div>
+                                            </div>
+  
+                               
+
+                         
+                         
+
+         
+                             <div class="col-md-6">
+                             <div class="form-group">
+                          <label class="control-label col-md-3">Time:</label>
+                              <div class="col-md-9">
+                            <p class="form-control-static" >   {{model.timee}}</p>
+                               </div>
+                              </div>
+                             </div>
+                           
+                                
+                             <div class="col-md-6">
+                             <div class="form-group">
+                          <label class="control-label col-md-3">Number:</label>
+                              <div class="col-md-9">
+                            <p class="form-control-static" >   {{model.num}}</p>
+                               </div>
+                              </div>
+                             </div>
+                                
+                          
+
+  
+                             <div class="col-md-6">
+                             <div class="form-group">
+                          <label class="control-label col-md-3">Type:</label>
+                              <div class="col-md-9">
+                            <p class="form-control-static" >   {{model.car}}</p>
+                               </div>
+                              </div>
+                             </div>
+                   
+   <div class="col-md-6">
+                             <div class="form-group">
+                          <label class="control-label col-md-3">Date:</label>
+                              <div class="col-md-9">
+                            <p class="form-control-static" >   {{model.dates}}</p>
+                               </div>
+                              </div>
+                         
+                              </div>
+                        
+                             <div class="col-md-6">
+                             <div class="form-group">
+                          <label class="control-label col-md-3">Gender:</label>
+                              <div class="col-md-9">
+                            <p class="form-control-static" >   {{model.r1}}</p>
+                               </div>
+                              </div>
+                             </div>
+                           
+
+                           
+
+                       
+                             <div class="col-md-6">
+                             <div class="form-group">
+                          <label class="control-label col-md-3">status:</label>
+                              <div class="col-md-9">
+                            <p class="form-control-static" >   {{model.area}}</p>
+                               </div>
+                              </div>
+                             </div>
+                         
+
+                           
+
+                      
+
+
+
+                                   
+                                              
+                                                <div class="col-md-6">
+                                                   
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+                                            <!--/row-->
+                                            </div>
+
+                                    <div class="form-actions">
+                                   <div class="row">
+                              
+                                   <div class="col-md-6"> </div>
+                                    
+                                        </div>
+    
+    <div class="col-md-6">
+                                
+                                   <div class="col-md-offset-3 col-md-9">
+                      <button type="submit" name="Delete" class="deleteRow  btn btn-danger form-control" routerLink="/admin/model/{{model.shop_id}}/edit" style="background: #b4977a;     border: 1px solid #b4977a;" >
+                       <i class="ti-marker-alt"></i>
+                              Edit
+                          </button>
+                                         </div>
+                                        </div>
+
+                      <div class="col-md-6">
+                                
+                                   <div class="col-md-offset-3 col-md-9">
+                      <button type="submit" name="Delete" class="deleteRow  btn btn-danger form-control" (click)="delete(model.shop_id)" >
+                          <i class="fa fa-trash"></i>
+                              Delete
+                          </button>
+                                         </div>
+                                        </div>
+                                        </div>
+  </form>
+
+                                     </div>
+                                    </div>      
+                                    </div></div>

@@ -1,4 +1,7 @@
-export * from './create/create.component';
-export * from './edit/edit.component';
-export * from './index/index.component';
-export * from './show/show.component';
+
+
+export * from './create/create';
+export * from './edit/edit';
+export * from './show/show';
+export * from './index/indexs';
+
