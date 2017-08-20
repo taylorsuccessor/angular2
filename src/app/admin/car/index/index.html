@@ -8,7 +8,7 @@
                          <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
          
           <ol class="breadcrumb">
-            <li><a routerLink="/">Dashboard</a></li>
+            <li><a routerLink="/admin/car">Dashboard</a></li>
             <li class="active">Model</li>
           </ol>
         </div>
@@ -90,16 +90,16 @@
               <table class="table product-overview"  >
                 <thead>
                   <tr>
-                    <th><a routerLink="/admin/model" (click)="sortType('name')" [class.active]="sortBy=='name'"> 
+                    <th><a routerLink="/admin/car" (click)="sortType('name')" [class.active]="sortBy=='name'"> 
                     Name</a></th>
                     <th>Email</th>                  
-            <th><a routerLink="/admin/model" (click)="sortType('num')" [class.active]="sortBy=='num'"> 
+            <th><a routerLink="/admin/car" (click)="sortType('num')" [class.active]="sortBy=='num'"> 
                         number</a></th>
                       <th>time</th>
                       <th>date</th>
                       <th>type</th>
                      <th>Gender</th>
-                     <th><a routerLink="/admin/model" (click)="sortType('status')" [class.active]="sortBy=='status'"> 
+                     <th><a routerLink="/admin/car" (click)="sortType('status')" [class.active]="sortBy=='status'"> 
                      status</a></th>
                      <th>index</th>
                     <th>Actions</th>
@@ -117,10 +117,10 @@
                       <td>{{model.area}}</td>
                       <td>{{i+1}}</td>
                     <td>
-                    <a routerLink="/admin/model/{{model.shop_id}}/edit" class="text-inverse p-r-10" data-toggle="tooltip" title="Edit Car" >
+                    <a routerLink="/admin/car/{{model.shop_id}}/edit" class="text-inverse p-r-10" data-toggle="tooltip" title="Edit Car" >
                     <i class="ti-marker-alt"></i></a>
                      
-                    <a routerLink="/admin/model/{{model.shop_id}}" class="text-inverse p-r-10" data-toggle="tooltip" title="View Car">
+                    <a routerLink="/admin/car/{{model.shop_id}}" class="text-inverse p-r-10" data-toggle="tooltip" title="View Car">
                     <i class="fa fa fa-eye" ></i></a> 
                     <a (click)="delete(model.shop_id)" class="text-inverse" title="Delete Car" data-toggle="tooltip">
                      <i class="ti-trash" ></i></a> 

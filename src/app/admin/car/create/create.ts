@@ -25,10 +25,10 @@ model = new Model();
   create(){
       this._service
         .create(this.model)
-        .subscribe(()=>  this.router.navigate(['/admin/model']));
+        .subscribe(()=>  this.router.navigate(['/admin/car']));
   }
    goBack(){
-    this.router.navigate(['/admin/model']);
+    this.router.navigate(['/admin/car']);
   }
   public rs = [
     { value: 'F', display: 'Female' },

@@ -43,7 +43,7 @@ export class Edit implements OnInit {
   }
  
    goBack(){
-    this.router.navigate(['/admin/model']);
+    this.router.navigate(['/admin/car']);
   }
   public rs = [
     { value: 'F', display: 'Female' },

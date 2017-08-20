@@ -4,7 +4,7 @@ import { AuthGuard } from './../common/auth.guard';
 import { PublicComponent, PUBLIC_ROUTES } from './common/public';
 
 import { SecureComponent } from '../app/admin/secure';
-import { SECURE_ROUTES_MODEL } from '../app/admin/model/routes';
+import { SECURE_ROUTES_MODEL } from '../app/admin/car/routes';
 /**
  * Route constant 
  */

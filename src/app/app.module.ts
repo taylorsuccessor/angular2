@@ -12,7 +12,7 @@ import { PublicComponent } from './common/public';
 
 
 
- import { ArrayModel } from './admin/model/component'; 
+ import { ArrayModel } from './admin/car/component'; 
 var am:ArrayModel =new ArrayModel()
 var model= am.getArrModel();
 var ModelService=am.getArrMService();

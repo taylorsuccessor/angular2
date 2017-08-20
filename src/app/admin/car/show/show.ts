@@ -30,7 +30,7 @@ export class Show implements OnInit {
   };
 
   goBack(){
-    this.router.navigate(['/admin/model']);
+    this.router.navigate(['/admin/car']);
   }
     delete(id){
       this._service
