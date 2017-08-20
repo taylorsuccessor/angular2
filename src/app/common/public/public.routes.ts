@@ -1,7 +1,7 @@
 import { LoginComponent } from './../../common/login';
 import { RegisterComponent } from './../../common/register';
 import { Routes, RouterModule } from '@angular/router';
-import { UserService } from 'app/common/service/user.service';
+ //import { UserService } from 'app/common/service/user.service';
 import { RecoverComponent } from './../../common/recover';
 
 export const PUBLIC_ROUTES: Routes = [

@@ -1,7 +1,7 @@
-import { CreateComponent } from '../model/create';
-import { IndexComponent } from '../model/index';
-import { EditComponent } from '../model/edit';
-import { ShowComponent } from '../model/show';
+import { CreateComponent } from '../model/indexes';
+import { IndexComponent } from '../model/indexes';
+import { EditComponent } from '../model/indexes';
+import { ShowComponent } from '../model/indexes';
 
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './../../../common/auth.guard';

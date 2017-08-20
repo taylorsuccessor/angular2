@@ -34,7 +34,7 @@ export class IndexComponent implements OnInit {
          this._service
         .getAllList()
             .subscribe(data => {
-        console.log(data.rows.length);
+        alert(data.rows.length);
               alert(data.totalNumber);
                 // set items to json response
                 this.allItems = data.rows;
@@ -105,19 +105,7 @@ SortByNum(n1:Model, n2:Model){
         this.models = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
     }
   
-  fun(){
-  let i=6+4;
-    return i;
-  }
-  public sum(){
-  this._service
-        .getAllList()
-        .subscribe(models => {
-      return     models+1;
-         
-      } )
-   
-  }
+
 
 }
 

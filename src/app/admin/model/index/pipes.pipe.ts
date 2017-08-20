@@ -4,7 +4,7 @@ import { Pipe, PipeTransform, Injectable } from '@angular/core';
 
 @Injectable()
 export class FilterArrayPipe implements PipeTransform {
-	 transform(models: Array, nameSearch: string, emailSearch: string, statusSearch: string, numSearch: any, typeSearch: string, genderSearch: string, dateSearch: any, idSearch: any){
+	 transform(models: any, nameSearch: string, emailSearch: string, statusSearch: string, numSearch: any, typeSearch: string, genderSearch: string, dateSearch: any, idSearch: any){
         if (models && models.length){
             return models.filter(model =>{
                 if (nameSearch && model.name.toLowerCase().indexOf(nameSearch.toLowerCase()) === -1){

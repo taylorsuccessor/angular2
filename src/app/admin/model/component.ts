@@ -1,8 +1,8 @@
 
-import { CreateComponent } from '../model/create';
-import { EditComponent } from '../model/edit';
-import { ShowComponent } from '../model/show';
-import { IndexComponent } from '../model/index';
+import { CreateComponent } from '../model/indexes';
+import { EditComponent } from '../model/indexes';
+import { ShowComponent } from '../model/indexes';
+import { IndexComponent } from '../model/indexes';
 import { SecureComponent } from 'app/admin/secure';
 import { Service } from '../model/service/service';
 import { FilterArrayPipe } from '../model/index/pipes.pipe';
