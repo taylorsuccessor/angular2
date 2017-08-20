@@ -16,7 +16,7 @@
           
             <input #emailInput="ngModel"
           
-             [(ngModel)]="model.email" type="email" name="email" class="form-control" placeholder="Email" required ngModel/>
+             [(ngModel)]="model.email" type="email" name="email" class="form-control" placeholder="Email" required  ngModel pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"  />
 
              <div class="alert alert-danger" *ngIf="emailInput.errors && (emailInput.dirty || emailInput.touched)">
                 <span [hidden]="!emailInput.errors.pattern">

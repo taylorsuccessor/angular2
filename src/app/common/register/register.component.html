@@ -15,7 +15,7 @@
         <!--email-->
        <div class="from-group">       
             <input #emailInput="ngModel"
-             pattern='^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'
+             pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" 
              [(ngModel)]="model.email" type="email" name="email" class="form-control" placeholder="Email"/>
              <div class="alert alert-danger" *ngIf="emailInput.errors && (emailInput.dirty || emailInput.touched)">
                 <span [hidden]="!emailInput.errors.pattern">
