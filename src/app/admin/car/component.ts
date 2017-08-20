@@ -1,6 +1,6 @@
 
-import * as Car from '../car/indexes';
-import { SecureComponent } from '../../../app/admin/secure';
+import * as Car from './indexes';
+import { SecureComponent } from 'app/admin/secure';
 import { Service } from '../car/service/service';
 import { FilterArrayPipe } from '../car/index/pipes.pipe';
 import { PagerService } from '../car/index/pager.service';

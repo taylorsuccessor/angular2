@@ -3,10 +3,10 @@ import { Service } from '../service/service';
 import { Model } from '../service/model';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import { Pipe, PipeTransform } from '@angular/core';
-import { FilterArrayPipe } from '../index/pipes.pipe';
+import { FilterArrayPipe } from './pipes.pipe';
 import * as _ from 'underscore';
 
-import { PagerService } from '../index/pager.service';
+import { PagerService } from './pager.service';
 
 @Component({
   selector: 'app-index',

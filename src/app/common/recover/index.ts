@@ -1,1 +1,1 @@
-export * from './recover.component';
+//export * from './recover.component';

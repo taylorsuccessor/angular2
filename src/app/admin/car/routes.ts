@@ -1,4 +1,4 @@
-import * as Car from '../car/indexes';
+import * as Car from './indexes';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './../../../common/auth.guard';
 

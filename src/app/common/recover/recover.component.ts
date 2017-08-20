@@ -6,7 +6,7 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 @Component({
   selector: 'app-recover',
   templateUrl: './recover.component.html',
-  styleUrls: ['./recover.component.css'] ,
+//  styleUrls: ['./recover.component.css'] ,
 })
 export class RecoverComponent implements OnInit {
 

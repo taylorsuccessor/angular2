@@ -5,23 +5,14 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './Apps/app.component';
 
-// Layout
-import { PublicComponent } from './common/public';
-
 //array
-
-
-
  import { ArrayModel } from './admin/car/component'; 
 var am:ArrayModel =new ArrayModel()
 var model= am.getArrModel();
 var ModelService=am.getArrMService();
 
 //Public Component
-import { LoginComponent } from './common/login';
-import { RegisterComponent } from './common/register';
-import { UserService } from './common/service/user.service';
-import { RecoverComponent } from './common/recover';
+import * as Public from './common/indexes';
 
 // Common
 import { AuthGuard } from './../common/auth.guard';
@@ -30,12 +21,10 @@ import { AuthGuard } from './../common/auth.guard';
 @NgModule({
   declarations: [
     AppComponent,
-   
-    LoginComponent,
-    RegisterComponent,
-    RecoverComponent,
-    PublicComponent,
-
+    Public.LoginComponent,
+    Public.RegisterComponent,
+   Public.RecoverComponent,
+    Public.PublicComponent,
   model,
   ],
   imports: [
@@ -44,7 +33,7 @@ import { AuthGuard } from './../common/auth.guard';
     HttpModule,
     AppRoutingModule,
   ],
-  providers: [AuthGuard,UserService,ModelService],
+  providers: [AuthGuard,Public.UserService,ModelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
