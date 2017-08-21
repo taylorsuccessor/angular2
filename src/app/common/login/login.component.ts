@@ -33,7 +33,11 @@ newTrustFormVisible: false;
 
    .subscribe(
                 (data) => {
+                  if (this.model  == this.model) {
                     this.router.navigate(['/admin/car']);
+                  }
+                  else {alert ("the email not foun"); 
+                  }
                 },
            //     error => {
                  //   this.userService.error();

@@ -9,6 +9,18 @@
                     </div>
                     </div>
                 </div>
+                
+                
+                <div>
+	<h5>@INPUT/Input : </h5>
+To define an input for a component, we use the @Input/Input decorator. 
+	<h2>PARENT COMPONENT</h2>
+		<input type="text" [(ngModel)]="tochild" name="inputtext" #inputText (keyup)="increment(inputText.value)" />
+	<hr />
+<app-example [user]="tochild" [count]="counter"></app-example>
+</div>
+
+
 
  <div class="white-box">   
    <div class="row bg-title">
