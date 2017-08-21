@@ -21,8 +21,7 @@
    
               <div class="from-group">
           
-             <input #emailInput="ngModel"
-            pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+             <input #emailInput="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
              [(ngModel)]="model.email" type="email" name="email" class="form-control" placeholder="Email" required />
              
             <div class="alert alert-danger" *ngIf="emailInput.errors && (emailInput.dirty || emailInput.touched)">
