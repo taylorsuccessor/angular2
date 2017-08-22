@@ -5,13 +5,13 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './Apps/app.component';
 
-//array
- import { ArrayModel } from './admin/car/component'; 
-var am:ArrayModel =new ArrayModel()
-var model= am.getArrModel();
-var ModelService=am.getArrMService();
+// array
+ import { ArrayModel } from './admin/car/component' ;
+let am: ArrayModel = new ArrayModel();
+let model = am.getArrModel();
+let ModelService = am.getArrMService();
 
-//Public Component
+// Public Component
 import * as Public from './common/indexes';
 
 // Common
@@ -33,7 +33,7 @@ import { AuthGuard } from './../common/auth.guard';
     HttpModule,
     AppRoutingModule,
   ],
-  providers: [AuthGuard,Public.UserService,ModelService],
+  providers: [AuthGuard, Public.UserService, ModelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

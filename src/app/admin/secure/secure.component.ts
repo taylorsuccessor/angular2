@@ -16,9 +16,9 @@ term$ = new Subject<string>();
 
   ngOnInit() {
   }
-  getByFilter(term: string){
+  getByFilter(term: string) {
 
- alert("su")
+ alert( "su" );
   }
 
 }

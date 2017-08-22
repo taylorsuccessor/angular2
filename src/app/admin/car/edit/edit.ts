@@ -24,29 +24,29 @@ export class Edit implements OnInit {
 
   }
 
-  //model:any={};
+  // model:any={};
   model = new Model();
   id = this.route.snapshot.params['id'];
-  getSingleModel(){
-    
+  getSingleModel() {
+
     this._service
       .show(this.id)
-      .subscribe(model =>{
+      .subscribe(model => {
           this.model = model[0];
           })
   };
-  
-  edit(){
+
+  edit() {
       this._service
         .edit(this.model)
         .subscribe(()=> this.goBack());
   }
- 
-   goBack(){
+
+   goBack() {
     this.router.navigate(['/admin/car']);
   }
   public rs = [
-    { value: 'F', display: 'Female' },
-    { value: 'M', display: 'Male' }
+{ value: 'F', display: 'Female' },
+{ value: 'M', display: 'Male' }
 ];
 }

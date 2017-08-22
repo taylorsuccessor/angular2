@@ -10,7 +10,7 @@ export class Example {
   @Input() user: string;
   @Input() count: number;
   constructor() {
-    console.log(this.user,this.count);
+    console.log(this.user, this.count);
   }
 }
 

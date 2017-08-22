@@ -19,20 +19,20 @@ export class Show implements OnInit {
     this.getSingleModel();
       this.getAllList();
   }
-  model:Model;
-  getSingleModel(){
+  model: Model;
+  getSingleModel() {
     var id = this.route.snapshot.params['id'];
     this._service
       .show(id)
-      .subscribe(model =>{
+      .subscribe(model => {
           this.model = model[0];
-          })
+          } )
   };
 
-  goBack(){
+  goBack() {
     this.router.navigate(['/admin/car']);
   }
-    delete(id){
+    delete(id) {
       this._service
         .delete(id)
         .subscribe(() => {
@@ -41,7 +41,7 @@ export class Show implements OnInit {
       } )
   }
 
-    getAllList(){
+    getAllList() {
      this._service
         .getAllList()
         .subscribe(models => {

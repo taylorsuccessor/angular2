@@ -12,11 +12,14 @@ import { Example } from '../example/example';
 export class Create implements OnInit {
 
   constructor(
-
     private _service: Service,
-     private router: Router) { }
- models:any;
+     private router: Router,
+    ) { }
+
+    model= new Model ();
+ models: any;
   ngOnInit() {
+
       this.models = {
         r1: this.rs[0].value, // default to Female
       //   car: this.cars[0], // default to Female
@@ -24,26 +27,25 @@ export class Create implements OnInit {
 
   }
 
-model = new Model();
-  create(){
+
+  create() {
       this._service
         .create(this.model)
-        .subscribe(()=>  this.router.navigate(['/admin/car']));
+        .subscribe(() =>  this.router.navigate(['/admin/car']));
   }
-   goBack(){
+   goBack() {
     this.router.navigate(['/admin/car']);
   }
   public rs = [
-    { value: 'F', display: 'Female' },
-    { value: 'M', display: 'Male' }
-];
+{ value: 'F', display: 'Female' } ,
+{ value:'M', display: 'Male' }
+ ];
 //  public cars = [
  //   { value: 'volo', display: 'volo' },
 //    { value: 'cart', display: 'cart' }
-//];
-  
-  counter: number=0;
+// ];
+
+  counter: number=0 ;
   increment(val): void {
-    this.counter=val.length;
-  }
-}
+    this.counter = val.length;
+  } }

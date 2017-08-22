@@ -9,7 +9,7 @@
         <!--name-->
         <div class="form-group ">
           <div class="col-xs-12">
-            <input class="form-control" type="text" required="" placeholder="Name" [(ngModel)]="model.name" name="name">
+            <input class="form-control" type="text" required placeholder="Name" [(ngModel)]="model.user" name="user">
           </div>
         </div>
         <!--email-->
@@ -18,7 +18,7 @@
              pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" 
              [(ngModel)]="model.email" type="email" name="email" class="form-control" placeholder="Email"/>
              <div class="alert alert-danger" *ngIf="emailInput.errors && (emailInput.dirty || emailInput.touched)">
-                <span [hidden]="!emailInput.errors.pattern">
+                <span >
                     please enter a valid email
                 </span>
             </div>            
@@ -28,13 +28,13 @@
       <!--password-->
         <div class="form-group ">
           <div class="col-xs-12">
-            <input class="form-control" type="password" required="" placeholder="Password" [(ngModel)]="model.password" name="password">
+            <input class="form-control" type="password" required placeholder="Password" [(ngModel)]="model.password" name="password">
           </div>
         </div>
              <!--password-->
         <div class="form-group" >
           <div class="col-xs-12"> 
-            <input class="form-control" type="password" required="" placeholder="Confirm Password" [(ngModel)]="model.repassword" name="repassword" >
+            <input class="form-control" type="password" required placeholder="Confirm Password" [(ngModel)]="model.repassword" name="repassword" >
           </div>
         </div>       
            <!--alert password not math-->
