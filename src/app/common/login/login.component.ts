@@ -18,11 +18,9 @@ newTrustFormVisible: false;
   ) { }
 
   ngOnInit() {
-      
+
   }
 
-  
- 
   model = new User();
 
   loginUser(){

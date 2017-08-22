@@ -12,12 +12,12 @@ import { PagerService } from './pager.service';
   selector: 'app-index',
   templateUrl: './index.html',
 //  styleUrls: ['./index.component.css'],
-     //pipes: [FilterArrayPipe]
+     // pipes: [FilterArrayPipe]
 })
 export class Index implements OnInit {
 
   constructor(
-    private _service:Service,
+    private _service: Service,
     private router: Router,
      private pagerService: PagerService,
    ) { }

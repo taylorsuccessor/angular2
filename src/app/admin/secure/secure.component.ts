@@ -6,7 +6,7 @@ import { Subject } from 'rxjs/Subject';
 @Component({
   selector: 'app-secure',
   templateUrl: './secure.component.html',
-  styleUrls: ['./secure.component.css']
+ // styleUrls: ['./secure.component.css']
 })
 export class SecureComponent implements OnInit {
 term$ = new Subject<string>();

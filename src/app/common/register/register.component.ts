@@ -19,12 +19,12 @@ user:any;
 
 model = new User();
  addUser(){
-//this.newTrustFormVisible = true;
+// this.newTrustFormVisible = true;
     this.userService
     .addUser(this.model)
  .subscribe(
                 data => {
-                 this.user=data;
+                 this.user= data;
              console.log(data);
            this.userService.success('the register success');
                this.router.navigate(['/home']);
