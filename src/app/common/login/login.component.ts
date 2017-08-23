@@ -13,6 +13,7 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 export class LoginComponent implements OnInit {
 newTrustFormVisible: false;
  loading = false;
+  alert= false;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -56,7 +57,7 @@ newTrustFormVisible: false;
                 }
                 else  if (data.status == 'e') {
                              this.router.navigate(['/login']); 
-                             this.loading = false;
+                             this.alert = true;
                           }
                 },
                 error => {
@@ -77,6 +78,10 @@ forgetPas() {
  this.router.navigate(['/admin-recover']);
 }
 
-
+ref(){
+    this.router.navigate(['/login']);
+   this.loading = false;
+  this.alert=false;
+  }
 
 }
