@@ -1,0 +1,130 @@
+
+
+.img_cap img {
+
+    width: 160px;
+    height: 95px;
+}
+#generalPopupModel .min-height480{
+min-height: auto !important;
+}
+#generalPopupModel  .oneOrder{
+    margin-bottom:30px;
+    clear:both;
+
+    overflow: auto;
+
+}
+
+.oneAddressSelectLabel{
+    display:block;
+    padding:5px 10px;
+    border:1px solid #000000;
+    background-color:#b59778;
+    color:#ffffff;
+    clear:both;
+}
+
+/*___________________________________________shopDeliverAreaTable*/
+#shopDeliverAreaTable{
+
+}
+#shopDeliverAreaTable th{
+    background-color: #b59778;
+    color: #ffffff;
+    text-align: center;
+    padding: 5px;
+}
+
+
+#shopDeliverAreaTable td{
+    background-color: #efece9;
+    color: #000000;
+    text-align: center;
+    padding: 5px;
+}
+
+/*____________________________________________________input*/
+/*_________________-errors*/
+.has-error input,.has-error textarea,.has-error select{
+    border:1px solid #ce6363;
+}
+
+/*________________END_-errors*/
+/*__________________search*/
+.search-bar .text_box{margin:0px;}
+.search-bar .selct-place{height:40px;}
+
+
+
+.search-blog .text_box{margin:0px;height:40px;}
+
+
+/*_______________________________________________END_____input*/
+
+a.add_location:hover{background-image:none;}
+
+.datetimepicker-minutes .minute {
+    padding: 0 !important;
+}
+
+.datetimepicker-minutes  .minute:before{
+    background:none !important;
+}
+
+
+
+/* share box-------------------------------*/
+
+
+.dropbtn {
+   
+    color: black;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+
+    background-color: #FFF;
+
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+   /* min-width: 160px;*/
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+}
+
+
+
+/*----------------------------*/
+
+
+ .UlSelectize{
+     height: 270px;
+     overflow-y: scroll;
+
+    }
