@@ -1,8 +1,9 @@
 
 
-export * from './login/login.component';
-export * from './register/register.component';
-export * from './recover/recover.component';
-export * from './public/public.component';
+export * from './login/login';
+export * from './register/register';
+export * from './recover/recover';
+export * from './public/public';
+// export * from './public/public.routes';
 export * from './service/user.service';
 export {PUBLIC_ROUTES} from './public/public.routes';

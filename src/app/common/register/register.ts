@@ -4,7 +4,7 @@ import { User } from '../../common/service/user';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 @Component({
   selector: 'app-register',
-  templateUrl: './register.component.html',
+  templateUrl: './register.html',
   // styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
@@ -46,11 +46,11 @@ model = new User();
 
             .subscribe(
                 data => {
-                          if (data.status == 's') {
+                          if (data.status == 'success') {
                      this.newTrustFormVisible = false;
                     this.router.navigate(['/admin/car']);
                 }
-                else  if (data.status == 'e') {
+                else  if (data.status == 'error') {
                              this.router.navigate(['/register']); 
                          this.alert = true;
                           }

@@ -7,7 +7,7 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
+  templateUrl: './login.html',
 //  styleUrls: ['./login.component.css'] ,
 })
 export class LoginComponent implements OnInit {
@@ -51,11 +51,11 @@ newTrustFormVisible: false;
 
             .subscribe(
                 data => {
-                          if (data.status == 's') {
+                          if (data.status == 'success') {
                      this.loading = false;
                     this.router.navigate(['/admin/car']);
                 }
-                else  if (data.status == 'e') {
+                else  if (data.status == 'error') {
                              this.router.navigate(['/login']); 
                              this.alert = true;
                           }

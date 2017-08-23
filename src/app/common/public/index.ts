@@ -1,2 +1,2 @@
-export * from './public.component';
+// export * from './public';
 export * from './public.routes';
