@@ -8,7 +8,8 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
   // styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-newTrustFormVisible: false;
+newTrustFormVisible= false;
+  alert=false;
 user:any;
     constructor(
     private userService: UserService,
@@ -18,16 +19,16 @@ user:any;
   }
 
 model = new User();
+  /*
  addUser(){
-// this.newTrustFormVisible = true;
     this.userService
     .addUser(this.model)
  .subscribe(
                 data => {
+                  this.newTrustFormVisible = true;
                  this.user= data;
-             console.log(data);
            this.userService.success('the register success');
-               this.router.navigate(['/home']);
+               this.router.navigate(['/login']);
                 },
                 error => {
                    console.log("the user already register");
@@ -36,10 +37,43 @@ model = new User();
                 },
 
                 );
-     
 }
+   */
+  
+   addUser() {
+        this.newTrustFormVisible = true;
+        this.userService.addUser(this.model.user, this.model.email, this.model.password, this.model.repassword)
+
+            .subscribe(
+                data => {
+                          if (data.status == 's') {
+                     this.newTrustFormVisible = false;
+                    this.router.navigate(['/admin/car']);
+                }
+                else  if (data.status == 'e') {
+                             this.router.navigate(['/register']); 
+                         this.alert = true;
+                          }
+                },
+                error => {
+                 //   this.alertService.error(error);
+                 // alert("not found");
+                    this.newTrustFormVisible = false;
+               }
+              );
+    }
+  
+  
+  
   goBack(){
     this.router.navigate(['/login']);
+  }
+  
+  
+ref(){
+    this.router.navigate(['/register']);
+   this.newTrustFormVisible = false;
+  this.alert=false;
   }
 
 }

@@ -5,42 +5,62 @@
         <div class="form-horizontal form-material">
  <h3 class="box-title m-b-20">sign Up </h3>
         </div>
-      <form class="form-horizontal form-material" id="loginform"  (submit)="addUser()">
+      <form class="form-horizontal form-material"form name="form" (ngSubmit)="f.form.valid && addUser()" #f="ngForm" novalidate>
+       <div class="alert alert-danger alert-dismissable fade in"  *ngIf="alert">
+    <a (click)="ref()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Danger!</strong> The Email Already exists.
+  </div>
         <!--name-->
-        <div class="form-group ">
+        <div class="form-group " [ngClass]="{ 'has-error': f.submitted && !user.valid }">
           <div class="col-xs-12">
-            <input class="form-control" type="text" required placeholder="Name" [(ngModel)]="model.user" name="user">
+            <input class="form-control" type="text" required placeholder="Name" [(ngModel)]="model.user" name="user" #user="ngModel" />
+          <div *ngIf="f.submitted && !user.valid" class="help-block">Name is required</div>
           </div>
         </div>
-        <!--email-->
-       <div class="from-group">       
+        <!--email
+       <div class="from-group" [ngClass]="{ 'has-error': f.submitted && !emailInput.valid }">       
             <input #emailInput="ngModel"
              pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" 
              [(ngModel)]="model.email" type="email" name="email" class="form-control" placeholder="Email"/>
+              <div *ngIf="f.submitted && !emailInput.valid" class="help-block">Email is required</div>
              <div class="alert alert-danger" *ngIf="emailInput.errors && (emailInput.dirty || emailInput.touched)">
                 <span >
                     please enter a valid email
                 </span>
+                  
             </div>            
         </div>
+    -->
+    
+       <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">       
+            <input type="text" placeholder="Email" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" required   pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/>
+            <div *ngIf="f.submitted && !email.valid" class="help-block">email is required</div>
+             <div class="alert alert-danger" *ngIf="email.errors && (email.dirty || email.touched)">
+                <span > please enter a valid email </span>
+                  </div>   
+        </div>
+    
+    
     
 <br/>
       <!--password-->
-        <div class="form-group ">
+        <div class="form-group " [ngClass]="{ 'has-error': f.submitted && !password.valid }">
           <div class="col-xs-12">
-            <input class="form-control" type="password" required placeholder="Password" [(ngModel)]="model.password" name="password">
+            <input class="form-control" type="password" required placeholder="Password" [(ngModel)]="model.password" name="password" #password="ngModel" />
+              <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
           </div>
         </div>
              <!--password-->
-        <div class="form-group" >
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !repassword.valid }" >
           <div class="col-xs-12"> 
-            <input class="form-control" type="password" required placeholder="Confirm Password" [(ngModel)]="model.repassword" name="repassword" >
-          </div>
+            <input class="form-control" type="password" required placeholder="Confirm Password" [(ngModel)]="model.repassword" name="repassword" #repassword="ngModel" />
+           <div *ngIf="f.submitted && !repassword.valid" class="help-block">RePassword is required</div>
+         </div>
         </div>       
            <!--alert password not math-->
   <div *ngIf="model.password!=model.repassword">
     <div class= "alert alert-danger">
-      <strong>The password not match confirm password</strong>
+      <strong>The password not match confirm repassword</strong>
     </div>
   </div>
       <!--alert password view register-->
@@ -50,7 +70,7 @@
            <!--load-->
             <div  [hidden]="!newTrustFormVisible"  >   <i class="fa fa-spinner fa-spin" style="font-size:24px"></i></div>
           <a href="#" (click)="newTrustFormVisible = !newTrustFormVisible;" >
-        <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit" style="background: #b4977a; border: 1px solid #b4977a">Sign Up</button>
+        <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" [disabled]="alert" type="submit" style="background: #b4977a; border: 1px solid #b4977a">Sign Up</button>
            </a>
           </div>
         </div> 

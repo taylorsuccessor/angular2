@@ -9,9 +9,17 @@ export class UserService {
   checkMe :any;
 
 
- addUser(info){
-    return this._http.post( "http://localhost/api_json/add_user.php", info)
-      .map(() => "");
+ addUser(user: string, email: string, password: string, repassword: string){
+    return this._http.post( "http://localhost/api_json/add_user.php",  JSON.stringify({user:user,  email: email, password: password, repassword: repassword}))
+          .map((res: Response) => {
+                let user = res.json();
+                if (user && user.token) {
+                    localStorage.setItem('currentUser', JSON.stringify(user));
+                }else {
+           alert(user.status);
+                }
+              return user;
+            });
   }
 
   loginUser(info) {
