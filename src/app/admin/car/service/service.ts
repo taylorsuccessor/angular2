@@ -42,4 +42,17 @@ export class Service {
       .map(()=>"");
   
   }
+  
+   getMsg(){
+    return this._http.get("http://localhost/api_json/msg.php/")
+      .map(res=> {
+        this.checkMe = res;
+
+        if (this.checkMe._body !== "0") {
+           return res.json();
+        }
+
+      });
+  } 
+  
 }

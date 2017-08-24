@@ -9,4 +9,6 @@ export class Model {
   area: string;
   dates: string;
   timee: string;
+  msg: string;
+  type: number;
 }
