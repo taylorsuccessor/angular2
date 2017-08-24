@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Service } from '../service/service';
 import { Model } from '../service/model';
 import {ActivatedRoute, Params, Router} from '@angular/router';
@@ -6,9 +6,25 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 
 @Component ({
   selector: 'app-msg',
-  template:  `
-                         <ul *ngFor="let model of models, let i=index ">
+  template:  ` 
+ 
+ <ul class="nav navbar-top-links navbar-right pull-left">
+<li class="dropdown"> <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#">
+<i class="icon-envelope"></i>
+          
+          <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
+          </a>
+  <!-- new msg ________________________________________________________________________________________________________-->
+          
+                        <ul class="dropdown-menu mailbox animated bounceInDown">
+                            <li>
+                                <div class="drop-title">You have  new messages</div>
+                            </li>
+       <!-- msg new
+-->
+  <ul *ngFor="let model of models, let i=index ">
                   <div *ngIf="model.type ==1">
+                    
                   
                               <li>
                                 <div class="message-center">
@@ -19,14 +35,21 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
                                     </a>
                                 </div>
                             </li>
-                   </div>
-                   
-                   
-            </ul>
+        
+</div>
+</ul>
+  
+                       
+                        </ul>
+                        <!-- /.dropdown-messages -->
+
+                    </li>
+</ul>
+
+
 `,
 })
 export class Msgnew implements OnInit {
-
   constructor(
     private _service: Service,
     private router: Router,

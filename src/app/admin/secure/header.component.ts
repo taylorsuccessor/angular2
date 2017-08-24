@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Subject } from 'rxjs/Subject';
 
 
@@ -15,36 +14,29 @@ import { Subject } from 'rxjs/Subject';
                       
                     </li>
                 </ul>
-                <ul class="nav navbar-top-links navbar-right pull-right">
-                    <li class="dropdown"> <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#"><i class="icon-envelope"></i>
-        
-          <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
-          </a>
-  <!-- new msg ________________________________________________________________________________________________________-->
-          
-                        <ul class="dropdown-menu mailbox animated bounceInDown">
-                            <li>
-                                <div class="drop-title">You have  new messages</div>
-                            </li>
-               <app-msg></app-msg>
-                          
-                        </ul>
-                        <!-- /.dropdown-messages -->
-                    </li>
+         
 
+                <ul class="nav navbar-top-links navbar-right pull-right">
+                   
+                   <!-- new msg -->
+
+      <app-msg ></app-msg> 
+ 
                     <!-- /.dropdown -->
                     <li class="dropdown"> <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#"><i class="icon-note"></i>
           <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
           </a>
                         <ul class="dropdown-menu dropdown-tasks animated slideInUp">
                  
-           <app-msges></app-msges> 
+           <app-arch></app-arch>
                
-                            
+                    
                           
                         </ul>
                         <!-- /.dropdown-tasks -->
+   
                     </li>
+  
                     <!-- /.dropdown -->
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-language"></i> Language</a>
@@ -55,7 +47,7 @@ import { Subject } from 'rxjs/Subject';
                         </ul>
                         <!-- /.dropdown-user -->
                     </li>
-
+  
                     <li class="dropdown">
                         <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="style/plugins/images/users/dd.jpg" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">Admin</b> </a>
                         <ul class="dropdown-menu dropdown-user animated flipInY">
@@ -69,6 +61,7 @@ import { Subject } from 'rxjs/Subject';
                     <!-- /.Megamenu -->
                     <li class="right-side-toggle"> <a class="waves-effect waves-light" href="javascript:void(0)"><i class="ti-settings"></i></a></li>
                     <!-- /.dropdown -->
+
                 </ul>
             </div>
             <!-- /.navbar-header -->

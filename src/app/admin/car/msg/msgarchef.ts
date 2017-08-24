@@ -5,8 +5,9 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 
 
 @Component ({
-  selector: 'app-msges',
+  selector: 'app-arch',
   template: `
+
      <ul *ngFor="let model of models, let i=index ">
     <div *ngIf="model.type==2"> 
                          <li>

@@ -4,7 +4,7 @@ import { Component, Input } from '@angular/core';
   selector: 'app-example',
   template: `<h2>Child COMPONENT:</h2> 
   <div>{{user}}</div>
-  <div>Counter: {{count}}</div>`
+  <div>Counter: {{count}} 2</div>`
 })
 export class Example { 
   @Input() user: string;
