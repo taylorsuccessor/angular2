@@ -23,9 +23,9 @@ import { AuthGuard } from './../common/auth.guard';
     AppComponent,
     Public.LoginComponent,
     Public.RegisterComponent,
-   Public.RecoverComponent,
+    Public.RecoverComponent,
     Public.PublicComponent,
-  model,
+    model,
   ],
   imports: [
     BrowserModule,
